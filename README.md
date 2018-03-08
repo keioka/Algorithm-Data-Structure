@@ -1,6 +1,6 @@
-# 1. Time & Space Complexity
-
 # 2. Hash Table
+### Implementation
+Hash Table
 
 # 3. Array & String
 
@@ -17,8 +17,10 @@
 
 # 4. Linked List
 
-### Basic Implementation
-1. Double Linked List
+### Implementation
+1. Single Linked List
+2. Double Linked List
+3. Circular Linked List
 
 ### CCI questions
 2.1 Remove Duplicates
@@ -36,15 +38,21 @@
 1. Stack
 2. Queue
 3. Queue with 2 stacks
+4. Circular Queue
 
 ### CCI questions
-3.1 Three in One
+3.1 Three in One: Describe how you could use a single array to implement three stacks
+
 3.2 Stack Min
 3.3 Stack of Plates
 3.4 Queue via Stacks
 3.5 Sort Stack
 
 # 6. Trees and Graphs
+
+### Implementation
+1. Binary Search Tree
+2. Graph
 
 ### CCI questions
 4.1 Route Between Nodes
@@ -63,9 +71,6 @@
 5.4 Next Number
 
 # 8. Recursion and Dynamic Programming
-1. Stack
-2. Queue
-3. Queue with 2 stacks
 
 ### CCI questions
 8.1 Triple Step
@@ -85,10 +90,11 @@
 - Bubble Sort
 - Selection Sort
 - Merge Sort
--
+- Quick Sort
+- Heap Sort
 
-2. Queue
-3. Queue with 2 stacks
+2. Search
+- Binary Search
 
 ### CCI questions
 10.1 Sorted Merge
