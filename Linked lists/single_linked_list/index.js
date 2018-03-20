@@ -78,6 +78,7 @@ LinkedList.prototype.search = function(position) {
   return result
 }
 
+module.exports = LinkedList
 
 var linkedList = new LinkedList()
 
