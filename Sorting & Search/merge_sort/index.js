@@ -51,4 +51,6 @@ function merge(left, right) {
   return result
 }
 
-console.log(mergeSort([22, 43, 2, 34, 1]))
+
+module.exports = mergeSort
+

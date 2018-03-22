@@ -1,8 +1,45 @@
+# 1. String
+
+http://javarevisited.blogspot.com/2015/01/top-20-string-coding-interview-question-programming-interview.html
+
+### Common questions
+
+
+
+
 # 2. Hash Table
 ### Implementation
+
+
 Hash Table
 
+- 
+
+
 # 3. Array & String
+
+### Common questions
+
+http://javarevisited.blogspot.com/2015/06/top-20-array-interview-questions-and-answers.html
+
+- Find duplicate number on Integer array (http://javarevisited.blogspot.sg/2014/01/how-to-remove-duplicates-from-array-java-without-collection-API.html)
+
+- Find largest and smallest number in unsorted array ()
+
+- Find kth smallest and largest element in unsorted array?
+
+- Find common elements in three sorted array?
+
+- Flatten array
+
+- Reverse array 
+
+### Common questions
+
+- Reverse String
+
+- Find duplicate characters from String
+
 
 ### CCI questions
 
@@ -24,12 +61,27 @@ Hash Table
 
 1.9 String Rotation
 
+
+
+
+
+
 # 4. Linked List
 
 ### Implementation
 1. Single Linked List
 2. Double Linked List
 3. Circular Linked List
+
+### Common questions
+
+- Find the middle of a given linked list
+
+- Delete Middle of Linked List (https://practice.geeksforgeeks.org/problems/delete-middle-of-linked-list/1)
+
+- Rotate a linked list
+
+- Merge a linked list into another linked list at alternate positions. (https://www.geeksforgeeks.org/merge-a-linked-list-into-another-linked-list-at-alternate-positions/)
 
 ### CCI questions
 
@@ -49,6 +101,9 @@ Hash Table
 
 2.8 Loop Detection
 
+
+
+
 # 5. Stack & Queue
 
 ### Basic Implementation
@@ -56,6 +111,15 @@ Hash Table
 2. Queue
 3. Queue with 2 stacks
 4. Circular Queue
+
+
+### Common questions
+
+- Balanced Brackets
+
+- Simple Text Editor
+
+- Largest Rectangle
 
 ### CCI questions
 
@@ -68,6 +132,10 @@ Hash Table
 3.4 Queue via Stacks
 
 3.5 Sort Stack
+
+
+
+
 
 # 6. Trees and Graphs
 
@@ -91,6 +159,10 @@ Hash Table
 
 4.7 Build Order
 
+
+
+
+
 # 7. Bit Manipulation
 
 ### CCI questions
@@ -100,6 +172,10 @@ Hash Table
 5.3 Flip Bit to Win
 
 5.4 Next Number
+
+
+
+
 
 # 8. Recursion and Dynamic Programming
 
