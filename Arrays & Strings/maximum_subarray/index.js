@@ -1,5 +1,5 @@
 function maxSubarray(array) {
-    var currentMax = 0;
+    var currentMax = -Number.MAX_VALUE;
     var max = 0;
     for (var i = 0; i < array.length; i++) {
       
