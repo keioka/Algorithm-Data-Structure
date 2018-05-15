@@ -1,7 +1,7 @@
 function quickSort(arr, leftIndex, rightIndex){
     
-  // leftIndex and rightIndex could be "-1" or "undefined"
-  // so -1 is "falsy" so || operator does not work
+  // leftIndex and rightIndex could be "-1" or "undefined".
+  // -1 is "falsy" so || operator does not work.
   // Instead of that, use Number.isInteger().
   
   var left = Number.isInteger(leftIndex) ? leftIndex : 0;
@@ -27,9 +27,9 @@ function partition(arr, left, right){
   for(var i = left; i < right; i++){
     if(arr[i] < pivotValue){
       swap(arr, i, partitionIndex);
-        partitionIndex++;
-      }
+      partitionIndex++;
     }
+  }
   swap(arr, i, partitionIndex);
   return partitionIndex;
 }
