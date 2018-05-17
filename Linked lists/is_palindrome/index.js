@@ -1,4 +1,5 @@
 var LinkedList = require('../single_linked_list').LinkedList;
+var Node = require('../single_linked_list').Node;
 
 var list = new LinkedList();
 
@@ -6,45 +7,52 @@ list.add(1);
 list.add(2);
 list.add(3);
 list.add(4);
-list.add(5);
-list.add(6);
-list.add(7);
-list.add(8);
-list.add(9);
-list.add(10);
-list.add(11);
-list.add(12);
-list.add(13);
+list.add(4);
+list.add(3);
+list.add(2);
+list.add(1);
 
-console.log(list.display());
+function reverseLinkedList(node) {
+  var head = null;
+  var newNode;
 
-function reverseLinkedList(head) {
-  var node = head;
   while (node) {
 
+    // create new Node
+    newNode = new Node(node.value);
+    
+    // add prev node to nextNode
+    newNode.nextNode = head;
+    
+    // add new Node to new head
+
+    head = newNode;
+
+    // Iterate to new
+    node = node.nextNode;
   }
+  return head;
 }
 
 var isPalindrome = function(head) {
     var node = head;
-    var stack = [];
-    while (node) {
-        stack.push(node);
-        node = node.next;
-    }
-    
-    var node = head;
-    
-    while (stack.length > 0) {
-        var reverseNode = stack.pop();
-        if (node.val !== reverseNode.val) {
-            return false
-        }
-        node = node.next;
-    }
-    
-    return true;
-};
+    var nodeReverseList = reverseLinkedList(head);
 
+    while (nodeReverseList && node) {
+        if (node.value !== nodeReverseList.value) {
+            return false;
+        }
+        node = node.nextNode;
+        nodeReverseList = nodeReverseList.nextNode;
+    }
+
+    // If both of them are null, it means both of them end the loop at the same time.
+    if (!node && !nodeReverseList) {
+        return true;
+    }
+
+    // If either one is remained, it does not finish loop at the same time, which means not palindrome.
+    return false;
+};
 
 console.log(isPalindrome(list.head));
