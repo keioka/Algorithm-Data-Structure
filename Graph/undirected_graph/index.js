@@ -4,12 +4,12 @@ function Graph() {
 
 Graph.prototype.addNode = function(value) {
 	if (!this.graph[value]) {
-    	this.graph[value] = [];
+		this.graph[value] = [];
 	}
 }
 
 Graph.prototype.connectNode = function(node1, node2) {
-   	if (this.graph[node1] && this.graph[node2]) {
+	if (this.graph[node1] && this.graph[node2]) {
 		this.graph[node1].push(node2);
 		this.graph[node2].push(node1);
 	}
@@ -17,28 +17,28 @@ Graph.prototype.connectNode = function(node1, node2) {
 
 
 Graph.prototype.depthFisrt = function(value, cb) {
- 	if (!this.graph[value]) {
-    	return null;
+	if (!this.graph[value]) {
+		return null;
 	}
 
 	var queue = [...this.graph[value]];
-    var visited = {};
+	var visited = {};
 	
 	cb(value);
-    visited[value] = true;
+	visited[value] = true;
 
-    while (queue.length > 0) {
-      var node = queue.shift();
-      if (!visited[node]) {
-      	
-      	cb(node);
-      	visited[node] = true;
+	while (queue.length > 0) {
+		var node = queue.shift();
+		if (!visited[node]) {
+			
+			cb(node);
+			visited[node] = true;
 
-      	if (this.graph[node].length > 0) {
-      	  queue = queue.concat(this.graph[node]);
-      	}
-      }
-    }
+			if (this.graph[node].length > 0) {
+				queue = queue.concat(this.graph[node]);
+			}
+		}
+	}
 }
 
 
