@@ -13,25 +13,25 @@ list.add(2);
 list.add(1);
 
 function reverseLinkedList(node) {
-  var head = null;
-  var newNode;
+    var head = null;
+    var newNode;
 
-  while (node) {
+    while (node) {
 
-    // create new Node
-    newNode = new Node(node.value);
-    
-    // add prev node to nextNode
-    newNode.nextNode = head;
-    
-    // add new Node to new head
+        // create new Node
+        newNode = new Node(node.value);
 
-    head = newNode;
+        // add prev node to nextNode
+        newNode.nextNode = head;
 
-    // Iterate to new
-    node = node.nextNode;
-  }
-  return head;
+        // add new Node to new head
+
+        head = newNode;
+
+        // Iterate to new
+        node = node.nextNode;
+    }
+    return head;
 }
 
 var isPalindrome = function(head) {
