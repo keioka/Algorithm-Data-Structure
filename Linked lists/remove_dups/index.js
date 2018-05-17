@@ -34,30 +34,39 @@ LinkedList.prototype.forEach = function(cb) {
   }
 }
 
+// O(n)
 LinkedList.prototype.unique = function() {
   var node = this.head
   var dupMemo = {}
   var next
   while (node) {
-    console.log('value', node.value)
     dupMemo[node.value] = true
     next = node.nextNode
-    console.log('-----------')
-    console.log('next', node.nextNode)
-    if (!next) {
-      node.nextNode = null
-    } else {
-     console.log(dupMemo)
-    
-      if (dupMemo[next.value]) {
-        node.nextNode = next.nextNode ? next.nextNode.nextNode : null
+    if (next) {
+      var runner = next;
+      while (runner && dupMemo[runner.value]) {
+        runner = runner.nextNode;
+      }
+      node.nextNode = runner;
+    }
+    // Add value to memo
+    node = node.nextNode;
+  }
+}
+
+LinkedList.prototype.uniqueNoBuffer = function() {
+  var node = this.head
+  while (node) {
+    var runner = node;
+    while (runner && runner.nextNode) {
+      if (node.value === runner.nextNode.value) {
+        runner.nextNode = runner.nextNode.nextNode;
+        // runner stays same position if next node is changed.
+      } else {
+        runner = runner.nextNode;
       }
     }
-   
-    
-    // Add value to memo
-    
-    node = next
+    node = node.nextNode;
   }
 }
 
@@ -89,7 +98,24 @@ sll.add(new Node("c"))
 sll.add(new Node("c"))
 sll.add(new Node("b"))
 sll.add(new Node("a"))
+sll.add(new Node("c"))
+sll.add(new Node("c"))
+sll.add(new Node("b"))
+sll.add(new Node("a"))
+sll.add(new Node("c"))
+sll.add(new Node("c"))
+sll.add(new Node("b"))
+sll.add(new Node("d"))
+sll.add(new Node("a"))
 
-sll.unique()
+console.log("============")
 sll.forEach(function(node) { console.log(node.value) })
-console.log(sll.palindrome())
+console.log("============")
+
+// sll.unique()
+sll.uniqueNoBuffer()
+
+console.log("============")
+
+sll.forEach(function(node) { console.log(node.value) })
+console.log("============")
