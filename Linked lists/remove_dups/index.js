@@ -1,38 +1,4 @@
-function LinkedList() {
-  this.head
-  this.length = 0
-}
-
-function Node(value) {
-  this.value = value
-  this.nextNode = null
-}
-
-LinkedList.prototype.add = function(node) {
-  if (!this.head) {
-    this.head = node
-    return node
-  }
-  
-  var currentNode = this.head
-
-  while (currentNode.nextNode) {
-    currentNode = currentNode.nextNode
-  }
-  
-  currentNode.nextNode = node
-  this.length++
-  
-  return node
-}
-
-LinkedList.prototype.forEach = function(cb) {
-  var node = this.head
-  while(node) {
-    cb(node)
-    node = node.nextNode
-  }
-}
+var LinkedList = require('../single_linked_list').LinkedList;
 
 // O(n)
 LinkedList.prototype.unique = function() {
@@ -70,52 +36,31 @@ LinkedList.prototype.uniqueNoBuffer = function() {
   }
 }
 
-LinkedList.prototype.palindrome = function() {
-  var node = this.head
-  var head = node
-  return _palindrome(node, head)
-}
-
-function _palindrome(node, head) {
-  if (!node.nextNode) {
-    return node.value === head.value
-  }
-  
-  const prevResult = _palindrome(node.nextNode, head)
-  
-  if (prevResult) {
-    return node.value === head.value
-  } else {
-    return false
-  }
-    
-}
-
-var sll = new LinkedList()
-sll.add(new Node("a"))
-sll.add(new Node("b"))
-sll.add(new Node("c"))
-sll.add(new Node("c"))
-sll.add(new Node("b"))
-sll.add(new Node("a"))
-sll.add(new Node("c"))
-sll.add(new Node("c"))
-sll.add(new Node("b"))
-sll.add(new Node("a"))
-sll.add(new Node("c"))
-sll.add(new Node("c"))
-sll.add(new Node("b"))
-sll.add(new Node("d"))
-sll.add(new Node("a"))
+var sll = new LinkedList();
+sll.add("a");
+sll.add("b");
+sll.add("c");
+sll.add("c");
+sll.add("b");
+sll.add("a");
+sll.add("c");
+sll.add("c");
+sll.add("b");
+sll.add("a");
+sll.add("c");
+sll.add("c");
+sll.add("b");
+sll.add("d");
+sll.add("a");
 
 console.log("============")
-sll.forEach(function(node) { console.log(node.value) })
+sll.forEach(function(value) { console.log(value) });
 console.log("============")
 
 // sll.unique()
-sll.uniqueNoBuffer()
+sll.uniqueNoBuffer();
 
 console.log("============")
 
-sll.forEach(function(node) { console.log(node.value) })
+sll.forEach(function(value) { console.log(value) });
 console.log("============")

@@ -3,7 +3,7 @@
 // Search O(n)
 
 function LinkedList() {
-  this.head
+  this.head = null
   this.length = 0
 }
 
@@ -78,17 +78,7 @@ LinkedList.prototype.search = function(position) {
   return result
 }
 
-module.exports = LinkedList
-
-var linkedList = new LinkedList()
-
-console.log(linkedList.add(1))
-console.log(linkedList.length)
-console.log(linkedList.add(202020))
-console.log(linkedList.add(30))
-console.log(linkedList.add(44))
-console.log(linkedList.length)
-console.log(linkedList.display())
-console.log(linkedList.search(2))
-console.log(linkedList.delete(2))
-console.log(linkedList.display())
+module.exports = {
+  LinkedList: LinkedList,
+  Node: Node,
+}

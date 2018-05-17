@@ -1,39 +1,4 @@
-function LinkedList() {
-  this.head
-  this.length = 0
-}
-
-function Node(value) {
-  this.value = value
-  this.nextNode = null
-}
-
-LinkedList.prototype.add = function(node) {
-  if (!this.head) {
-    this.head = node
-    return node
-  }
-  
-  var currentNode = this.head
-
-  while (currentNode.nextNode) {
-    currentNode = currentNode.nextNode
-  }
-  
-  currentNode.nextNode = node
-  this.length++
-  
-  return node
-}
-
-LinkedList.prototype.forEach = function(cb) {
-  var node = this.head
-  while(node) {
-    cb(node)
-    node = node.nextNode
-  }
-}
-
+var LinkedList = require('../single_linked_list').LinkedList;
 
 var sll_1 = new LinkedList() 
 var sll_2 = new LinkedList() 
@@ -135,7 +100,6 @@ function intersectionLinkedList (sll_1, sll_2) {
   var lengthSLL_1 = checkLength(headSLL_1)
   var lengthSLL_2 = checkLength(headSLL_2)
   
-  // O(n)
   
   var indexSLL_1 = 0
   var indexSLL_2 = 0  

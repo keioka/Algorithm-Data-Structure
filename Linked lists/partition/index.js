@@ -1,4 +1,5 @@
-var LinkedList = require('../single_linked_list');
+var LinkedList = require('../single_linked_list').LinkedList;
+var Node = require('../single_linked_list').Node;
 
 function LinkedList() {
     this.head = null

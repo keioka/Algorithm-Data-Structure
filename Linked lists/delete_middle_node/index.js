@@ -1,4 +1,4 @@
-var LinkedList = require('../single_linked_list');
+var LinkedList = require('../single_linked_list').LinkedList;
 
 var list = new LinkedList();
 
