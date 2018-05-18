@@ -2,7 +2,7 @@ var LinkedList = require('../single_linked_list').LinkedList;
 var Node = require('../single_linked_list').Node;
 
 function LinkedListLoop() {
-	LinkedList.call(this);
+    LinkedList.call(this);
 }
 
 LinkedListLoop.prototype = Object.create(LinkedList.prototype);
@@ -23,32 +23,34 @@ list.add(nodeLoopFrom);
 
 
 function loopDetection(head, cb) {
-  var node = head;
-  var slow = node.nextNode;
-  var fast = node.nextNode.nextNode;
-  var steps = 0;
-  while (slow.nextNode && fast.nextNode && fast.nextNode.nextNode) {
-  	
-  	if (slow === fast) {
-       break;
-  	}
-  	slow = slow.nextNode;
-  	fast = fast.nextNode.nextNode;
-  	steps++;
-  }
-  
-  fast = head
+    var node = head;
+    var slow = node.nextNode;
+    var fast = node.nextNode.nextNode;
+    var steps = 0;
+    while (slow.nextNode && fast.nextNode && fast.nextNode.nextNode) {
 
-  while (fast.nextNode && slow.nextNode) {
-  	if (fast === slow) {
-      break
-  	}
+        if (slow === fast) {
+            break;
+        }
+        slow = slow.nextNode;
+        fast = fast.nextNode.nextNode;
+        steps++;
+    }
 
-  	fast = fast.nextNode;
-  	slow = slow.nextNode;
-  }
-  
-  cb(slow);
+    fast = head
+
+    while (fast.nextNode && slow.nextNode) {
+        if (fast === slow) {
+            break
+        }
+
+        fast = fast.nextNode;
+        slow = slow.nextNode;
+    }
+
+    cb(slow);
 }
 
-loopDetection(list.head, function(value) { console.log(value) });
+loopDetection(list.head, function(value) {
+    console.log(value)
+});
