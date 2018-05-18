@@ -13,7 +13,8 @@ function Node(value) {
 }
 
 LinkedList.prototype.add = function(value) {
-  var node = new Node(value)
+  var node = value instanceof Node ? value : new Node(value);
+  
   if (!this.head) {
     this.head = node
     return value

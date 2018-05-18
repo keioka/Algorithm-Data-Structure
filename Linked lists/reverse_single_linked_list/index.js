@@ -18,21 +18,21 @@ LinkedList.prototype.reverse = function(cb) {
     
     // previousNode === A
     previousNode = currentNode 
-    
+    console.log(previousNode)
+
     // currentNode === B
     currentNode = nextNode
   }
-  
   this.head = previousNode
 }
 
 
 var linkedList = new LinkedList()
 
-linkedList.add(new Node("A"))
-linkedList.add(new Node("B"))
-linkedList.add(new Node("C"))
-linkedList.add(new Node("D"))
+linkedList.add("A");
+linkedList.add("B");
+linkedList.add("C");
+linkedList.add("D");
 
 linkedList.reverse()
-linkedList.forEach(function(node) { console.log(node.value) })
+linkedList.forEach(function(value) { console.log(value) })
