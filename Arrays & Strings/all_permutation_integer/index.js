@@ -7,11 +7,23 @@ function permutationNum(array) {
             result.push(currentArray.slice());
         } else {
             for (var i = 0; i < candidateArray.length; i++) {
-                var nextSubarray = candidateArray.slice();
+                // Move element at index i of candidateArray to currentArray
+
+                // create copy of array
+                var nextCandidateSubarray = candidateArray.slice();
+
+                // Add element from candidate.
                 currentArray.push(candidateArray[i]);
-                nextSubarray.splice(i, 1);
-                inner(currentArray, nextSubarray);
+
+                // Delete element which is pushed to currentArray.
+                nextCandidateSubarray.splice(i, 1);
+
+                // Call function with new candidate
+                inner(currentArray, nextCandidateSubarray);
+
+                // After calling the function, pop out the element, which means moving back.
                 currentArray.pop();
+
             }
         }
     }
