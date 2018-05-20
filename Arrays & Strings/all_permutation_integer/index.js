@@ -3,8 +3,14 @@ function permutationNum(array) {
 
     function inner(currentArray, candidateArray) {
         // If candidateArray becomes empty
+        console.log('-------------------------');
+        console.log('currentArray', currentArray);
+        console.log('candidateArray', candidateArray);
+
         if (candidateArray.length < 1) {
             result.push(currentArray.slice());
+            console.log('inserted!!')
+            console.log('result ====>', result)
         } else {
             for (var i = 0; i < candidateArray.length; i++) {
                 // Move element at index i of candidateArray to currentArray
