@@ -11,7 +11,7 @@ var maxStockMulti = function(prices) {
     var max;
     var set = [];
     var i = 0;
-    while (prices.length - 2 > i)  {
+    while (prices.length - 1 > i)  {
         while (prices[i] > prices[i+1]) {
             i++;
         }
@@ -30,5 +30,5 @@ var maxStockMulti = function(prices) {
     return set.reduce((acc, crr) => acc + (crr[1] - crr[0]), 0);
 };
 
-console.log(maxStockMulti([120, 330, 10, 40, 50, 100, 200]));
+console.log(maxStockMulti([120, 330, 10, 40, 50, 100, 200, 300]));
 console.log(maxStockMulti([10, 330, 1000, 90, 50, 100, 2000]));
